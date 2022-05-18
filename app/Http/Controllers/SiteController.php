@@ -11,7 +11,7 @@ class SiteController extends Controller
      */
     public function index()
     {
-        echo "Conteúdo dinamico Home";
+        return view('home');
     }
 
     /**
@@ -45,7 +45,7 @@ class SiteController extends Controller
 
     /**
      * mostra a página servico
-     * 
+     *
      * @param int $id
      * @return void
      */
