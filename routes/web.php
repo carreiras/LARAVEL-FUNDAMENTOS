@@ -32,3 +32,27 @@ Route::get('/contato', function () {
 Route::get('/servicos', function () {
     echo "Conteúdo dinamico Serviços";
 });
+
+Route::get('/servico/{id}', function (int $id) {
+    $servicos = [
+        1 => [
+            'nome'      => 'Lavagem de roupas',
+            'descricao' => 'Descrição muito longa...',
+        ],
+        2 => [
+            'nome'      => 'Lavagem de cobertas',
+            'descricao' => 'Descrição muito longa...',
+        ],
+        3 => [
+            'nome'      => 'Lavagem de urso',
+            'descricao' => 'Descrição muito longa...',
+        ],
+    ];
+    echo $servicos[$id]['nome'];
+    echo "<br/>";
+    echo $servicos[$id]['descricao'];
+});
+
+Route::get('/saudacao/{nome?}', function (string $nome = null) {
+    echo "Olá $nome";
+});
