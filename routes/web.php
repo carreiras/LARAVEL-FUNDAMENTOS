@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SaudacaoController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,4 @@ Route::get('/contato', [SiteController::class, 'contato']);
 Route::get('/servicos', [SiteController::class, 'servicos']);
 Route::get('/servico/{id}', [SiteController::class, 'servico']);
 
-Route::get('/saudacao/{nome?}', function (string $nome = null) {
-    echo "Olá $nome";
-});
+Route::get('/saudacao/{nome?}', SaudacaoController::class);
